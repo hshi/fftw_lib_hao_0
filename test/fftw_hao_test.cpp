@@ -22,7 +22,7 @@ void FFTServer_param_construction_test()
     int dimen=3;
     int n[3]={2,3,6};
     int L=36;
-    FFTServer fft(dimen,n);
+    FFTServer fft(dimen,n,'R');
     size_t flag=0;
     if(fft.dimen!=dimen) flag++;
     for(int i=0; i<dimen; i++) {if(fft.n[i]!=n[i]) flag++;}
@@ -36,7 +36,7 @@ void FFTServer_equal_construction_test()
     int dimen=3;
     int n[3]={2,3,6};
     int L=36;
-    FFTServer fft_tmp(dimen,n);
+    FFTServer fft_tmp(dimen,n,'R');
     FFTServer fft(fft_tmp);
     size_t flag=0;
     if(fft.dimen!=dimen) flag++;
@@ -51,7 +51,7 @@ void FFTServer_equal_test()
     int dimen=3;
     int n[3]={2,3,6};
     int L=36;
-    FFTServer fft_tmp(dimen,n);
+    FFTServer fft_tmp(dimen,n, 'R');
     FFTServer fft; fft=fft_tmp;
     size_t flag=0;
     if(fft.dimen!=dimen) flag++;
@@ -65,7 +65,7 @@ void four_1D_test()
 {
     int dimen=1;
     int n[1]={3};
-    FFTServer fft(dimen,n);
+    FFTServer fft(dimen,n, 'R');
     complex<double> a[3]={{1,2},{2,3},{3,4}};
     complex<double>* b;
     complex<double> bforw_exact[3]={{6.,9.},{-2.366025403784438,-0.6339745962155598},{-0.6339745962155603,-2.366025403784437}};
@@ -84,7 +84,7 @@ void four_2D_test()
 {
     int dimen=2;
     int n[2]={2,3};
-    FFTServer fft(dimen,n);
+    FFTServer fft(dimen,n, 'R');
     complex<double> a[6]={{1,2},{2,3},{3,4},{2,2},{1,3},{3,2}};
     complex<double>* b;
     complex<double> bforw_exact[6]={{12.,16.},{-1.4999999999999987, 0.5980762113533187},{-1.4999999999999982,-4.598076211353313}, 

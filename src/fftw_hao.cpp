@@ -1,4 +1,6 @@
 #include<iostream>
+#include<stdlib.h>
+#include <algorithm> 
 #include "fftw_hao.h"
 using std::cout;
 using std::endl;
@@ -19,11 +21,14 @@ FFTServer::FFTServer()
                            FFTW_BACKWARD,FFTW_MEASURE);
 }
 
-FFTServer::FFTServer(int Dc, const int* Nc)
+FFTServer::FFTServer(int Dc, const int* Nc, char format)
 {
     dimen=Dc;
     n=new int[dimen];
-    std::copy(Nc,Nc+dimen,n);
+    if(format=='C') std::reverse_copy(Nc,Nc+dimen,n);  //Column-major: fortran style
+    else if(format=='R') std::copy(Nc,Nc+dimen,n); //Row-major: c style
+    else {cout<<"Do not know the format!!!! "<<format<<endl; exit(1); }
+
     L=1; for(int i=0; i<dimen; i++) L*=n[i];
    
     inforw =new complex<double>[L];

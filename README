@@ -1,4 +1,5 @@
 fftw_lib_hao
 ============
 
-The c++ fftw library, it is a wrap to use fftw.
+The c++ fftw library, it is a wrap to use fftw. 
+Both Column-major Format and Row-major Format for mulit-dimensional array are allowed.

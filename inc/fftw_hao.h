@@ -16,7 +16,7 @@ class FFTServer
     fftw_plan planback;
  public:
     FFTServer();
-    FFTServer(int Dc, const int* Nc);
+    FFTServer(int Dc, const int* Nc, char format); //'C' Column-major: fortran style; 'R' Row-major: c style;
     FFTServer(const FFTServer& x);
     ~FFTServer();
    
