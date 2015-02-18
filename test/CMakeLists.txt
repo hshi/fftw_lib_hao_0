@@ -4,6 +4,6 @@ add_executable(fftwtest ${fftw_test_srcs})
 
 target_link_libraries(fftwtest fftwhao)
 
-target_link_libraries(fftwtest ${fftw_lib})
+target_link_libraries(fftwtest ${fftw_libraries})
 
 install(TARGETS fftwtest  DESTINATION test)
