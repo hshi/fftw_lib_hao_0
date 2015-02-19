@@ -5,7 +5,6 @@
 
 #include "fftw_hao.h"
 
-
 using namespace std;
 
 void fftw_hao_test();
@@ -19,7 +18,8 @@ int main(int argc, char** argv)
 #endif
 
     if(rank==0)
-    {
+    {   
+        cout<<"\n\n\n=======Testing======="<<endl;
         fftw_hao_test();
     }
 
