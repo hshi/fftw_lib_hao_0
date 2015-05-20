@@ -1,5 +1,5 @@
-#ifndef FFTW_HAO
-#define FFTW_HAO
+#ifndef FFTW_HAO_H
+#define FFTW_HAO_H
 
 #include "fftw_define.h"
 
