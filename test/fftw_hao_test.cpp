@@ -1,6 +1,10 @@
 #include <iostream>
 #include <iomanip>
 #include "fftw_hao.h"
+#ifdef MPI_HAO
+#include <mpi.h>
+#endif
+
 using namespace std;
 
 void FFTServer_void_construction_test()
@@ -106,10 +110,20 @@ void four_2D_test()
 
 void fftw_hao_test()
 {
-    FFTServer_void_construction_test();
-    FFTServer_param_construction_test();
-    FFTServer_equal_construction_test();
-    FFTServer_equal_test();
-    four_1D_test();
-    four_2D_test();
+    int rank=0;
+#ifdef MPI_HAO
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+#endif
+
+    if(rank==0)
+    {
+       FFTServer_void_construction_test();
+       FFTServer_param_construction_test();
+       FFTServer_equal_construction_test();
+       FFTServer_equal_test();
+       four_1D_test();
+       four_2D_test();
+    }
+
+    if(rank==0) cout<<"\n";
 }
