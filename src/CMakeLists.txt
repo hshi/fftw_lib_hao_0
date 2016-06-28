@@ -1,5 +1,7 @@
-set(fftw_srcs fftw_hao.cpp)
+set(src_lib fftwhao)
 
-add_library(fftwhao STATIC ${fftw_srcs})
+file(GLOB srcs "*.cpp")
 
-install(TARGETS fftwhao  DESTINATION lib)
+add_library(${src_lib} STATIC ${srcs})
+
+install(TARGETS ${src_lib}  DESTINATION lib)

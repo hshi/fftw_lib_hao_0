@@ -11,8 +11,12 @@ add_definitions(${COMPILER_EXTRA_DEF})
 #For c++ flag
 set(CMAKE_CXX_FLAGS "${COMPILER_EXTRA_FLAG}" ${CMAKE_CXX_FLAGS})
 
+set(lib_all "")
+
+#Find fftw libary
 find_package(fftw REQUIRED)
 include_directories(${fftw_include_dirs})
+set(lib_all ${fftw_libraries} ${lib_all})
 
 include_directories(inc)
 

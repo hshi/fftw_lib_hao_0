@@ -1,3 +1,3 @@
-set(header fftw_define.h fftw_hao.h)
+file(GLOB header "*.h")
 
 install(FILES ${header}  DESTINATION include)

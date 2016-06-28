@@ -1,9 +1,11 @@
-set(fftw_test_srcs fftw_hao_test.cpp test_all.cpp)
+set(test_exe fftwtest)
 
-add_executable(fftwtest ${fftw_test_srcs})
+file(GLOB test_srcs "*.cpp")
 
-target_link_libraries(fftwtest fftwhao)
+add_executable(${test_exe} ${test_srcs})
 
-target_link_libraries(fftwtest ${fftw_libraries})
+target_link_libraries(${test_exe} fftwhao)
 
-install(TARGETS fftwtest  DESTINATION test)
+target_link_libraries(${test_exe} ${lib_all})
+
+install(TARGETS ${test_exe}  DESTINATION test)
