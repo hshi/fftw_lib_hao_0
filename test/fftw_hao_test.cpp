@@ -17,8 +17,8 @@ void FFTServer_void_construction_test()
     if(fft.dimen!=dimen) flag++;
     for(int i=0; i<dimen; i++) {if(fft.n[i]!=n[i]) flag++;}
     if(fft.L!=L) flag++;
-    if(flag==0) cout<<"FFTServer passed the void construction test!\n";
-    else cout<<"Warning!!!! FFTServer failed the void construction test!\n";
+    if(flag==0) cout<<"PASSED! FFTServer passed the void construction test!"<<endl;
+    else cout<<"Warning!!!! FFTServer failed the void construction test!"<<endl;
 }
 
 void FFTServer_param_construction_test()
@@ -31,8 +31,8 @@ void FFTServer_param_construction_test()
     if(fft.dimen!=dimen) flag++;
     for(int i=0; i<dimen; i++) {if(fft.n[i]!=n[i]) flag++;}
     if(fft.L!=L) flag++;
-    if(flag==0) cout<<"FFTServer passed the param construction test!\n";
-    else cout<<"Warning!!!! FFTServer failed the param construction test!\n";
+    if(flag==0) cout<<"PASSED! FFTServer passed the param construction test!"<<endl;
+    else cout<<"Warning!!!! FFTServer failed the param construction test!"<<endl;
 }
 
 void FFTServer_equal_construction_test()
@@ -46,8 +46,8 @@ void FFTServer_equal_construction_test()
     if(fft.dimen!=dimen) flag++;
     for(int i=0; i<dimen; i++) {if(fft.n[i]!=n[i]) flag++;}
     if(fft.L!=L) flag++;
-    if(flag==0) cout<<"FFTServer passed the equal construction test!\n";
-    else cout<<"Warning!!!! FFTServer failed the equal construction test!\n";
+    if(flag==0) cout<<"PASSED! FFTServer passed the equal construction test!"<<endl;
+    else cout<<"Warning!!!! FFTServer failed the equal construction test!"<<endl;
 }
 
 void FFTServer_equal_test()
@@ -61,8 +61,8 @@ void FFTServer_equal_test()
     if(fft.dimen!=dimen) flag++;
     for(int i=0; i<dimen; i++) {if(fft.n[i]!=n[i]) flag++;}
     if(fft.L!=L) flag++;
-    if(flag==0) cout<<"FFTServer passed the equal test!\n";
-    else cout<<"Warning!!!! FFTServer failed the equal test!\n";
+    if(flag==0) cout<<"PASSED! FFTServer passed the equal test!"<<endl;
+    else cout<<"Warning!!!! FFTServer failed the equal test!"<<endl;
 }
 
 void four_1D_test()
@@ -80,8 +80,8 @@ void four_1D_test()
     for(int i=0; i<3; i++) {if(abs(b[i]-bforw_exact[i])>1e-12) flag++;}
     b=fft.fourier_back(a);
     for(int i=0; i<3; i++) {if(abs(b[i]-bback_exact[i])>1e-12) flag++;}
-    if(flag==0) cout<<"FFTServer passed the 1D fourier test!\n";
-    else cout<<"Warning!!!! FFTServer failed the 1D fourier test!\n";
+    if(flag==0) cout<<"PASSED! FFTServer passed the 1D fourier test!"<<endl;
+    else cout<<"Warning!!!! FFTServer failed the 1D fourier test!"<<endl;
 }
 
 void four_2D_test()
@@ -102,8 +102,8 @@ void four_2D_test()
     for(int i=0; i<6; i++) {if(abs(b[i]-bforw_exact[i])>1e-12) flag++;}
     b=fft.fourier_back(a);
     for(int i=0; i<6; i++) {if(abs(b[i]-bback_exact[i])>1e-12) flag++;}
-    if(flag==0) cout<<"FFTServer passed the 2D fourier test!\n";
-    else cout<<"Warning!!!! FFTServer failed the 2D fourier test!\n";
+    if(flag==0) cout<<"PASSED! FFTServer passed the 2D fourier test!"<<endl;
+    else cout<<"Warning!!!! FFTServer failed the 2D fourier test!"<<endl;
     //cout<<flag<<endl;
     //for(int i=0; i<6; i++) cout<<b[i]<<"\n";
 }
@@ -125,5 +125,5 @@ void fftw_hao_test()
        four_2D_test();
     }
 
-    if(rank==0) cout<<"\n";
+    if(rank==0) cout<<" "<<endl;
 }
