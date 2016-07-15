@@ -11,6 +11,8 @@ add_definitions(${COMPILER_EXTRA_DEF})
 #For c++ flag
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+include_directories(inc)
+
 #For library
 set(lib_all "")
 
@@ -18,8 +20,6 @@ set(lib_all "")
    find_package(fftw REQUIRED)
    include_directories(${fftw_include_dirs})
    set(lib_all ${fftw_libraries} ${lib_all})
-
-include_directories(inc)
 
 add_subdirectory(inc)
 
