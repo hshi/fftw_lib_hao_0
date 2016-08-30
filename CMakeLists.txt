@@ -15,11 +15,9 @@ include_directories(inc)
 
 #For library
 set(lib_all "")
-
-   #Find fftw libary
-   find_package(fftw REQUIRED)
-   include_directories(${fftw_include_dirs})
-   set(lib_all ${fftw_libraries} ${lib_all})
+find_package(fftw REQUIRED)
+include_directories(${fftw_include_dirs})
+set(lib_all ${fftw_libraries} ${lib_all})
 
 add_subdirectory(inc)
 
